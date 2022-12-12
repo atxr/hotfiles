@@ -1,2 +1,12 @@
+package archlinux
+package argu
+package bang-bang
+package cd
+package expand
+package fuck
+package fzf
+package peco
+package python
+package z
 theme default
 theme sushi
