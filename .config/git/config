@@ -10,10 +10,10 @@
 ;*
 
 [user]
-;*name = "atxr"
-;*email = alexandre.tullot@protonmail.com
-  name = "Alexandre Tullot"
-  email = at@locaterisk.com
+  name = "atxr"
+  email = alexandre.tullot@protonmail.com
+;*  name = "Alexandre Tullot"
+;*  email = at@locaterisk.com
 [init]
   defaultBranch = main
 
