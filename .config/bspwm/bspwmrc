@@ -1,6 +1,6 @@
 #! /bin/sh
 
-mons --primary HDMI-1 -e right
+$HOME/.scripts/home
 sleep 10 && $HOME/.config/bspwm/scripts/bspfloat floating 5 &> $HOME/.log.bspfloat.txt &
 polybar &
 pgrep -x sxhkd > /dev/null || sxhkd &
