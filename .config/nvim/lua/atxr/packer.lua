@@ -7,6 +7,7 @@ return require("packer").startup(function(use)
 
     -- Telescope
     use("nvim-lua/plenary.nvim")
+    use("kyazdani42/nvim-web-devicons")
     use("nvim-telescope/telescope.nvim")
     use("nvim-telescope/telescope-file-browser.nvim")
     use {
