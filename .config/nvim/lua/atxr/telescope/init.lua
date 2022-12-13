@@ -9,8 +9,8 @@ M.find_files = function ()
   require('telescope.builtin').find_files()
 end
 
-M.find_browser = function ()
-  require('telescope.builtin').find_browser()
+M.file_browser = function ()
+  require('telescope').extensions.file_browser.file_browser()
 end
 
 M.current_buffer_fuzzy_find = function ()
