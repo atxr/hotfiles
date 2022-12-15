@@ -21,7 +21,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', '<leader>=', '<Cmd>lua vim.lsp.buf.format()<CR>', opts)
 end
 
 protocol.CompletionItemKind = {
@@ -57,14 +58,9 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
-nvim_lsp.flow.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
-
+-- Javascript & Typescript
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   capabilities = capabilities
 }
 
@@ -93,6 +89,10 @@ nvim_lsp.sumneko_lua.setup {
 nvim_lsp.pyright.setup{
   on_attach = on_attach,
   capabilities = capabilities
+}
+
+nvim_lsp.gopls.setup{
+  one_attach = on_attach
 }
 
 nvim_lsp.rust_analyzer.setup{
@@ -125,3 +125,12 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
+
+local null_ls = require("null-ls")
+null_ls.setup({
+    sources = {
+        -- formatting
+        null_ls.builtins.formatting.eslint,
+    },
+})
+

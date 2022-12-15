@@ -4,7 +4,7 @@ local keymap = vim.keymap
 keymap.set('n', '<F4>', ':lua package.loaded.atxr = nil\n:source ~/.config/nvim/init.vim\n')
 
 -- Disable yank with x
-keymap.set('n', 'x', '_x')
+keymap.set('n', 'x', '"_x')
 
 -- Increment/Decrement
 keymap.set('n', '+', '<C-a>')
